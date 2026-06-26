@@ -1,10 +1,3 @@
-Voici le code adapté pour une résolution standard Full HD (1920x1080).
-
-Les dimensions du bandeau ont été divisées par deux pour correspondre exactement aux proportions de votre écran sans flouter le texte, et la hauteur a été fixée à 110 pixels, ce qui est le format idéal pour un bandeau horizontal en Full HD.
-
-Voici le code à copier dans votre fichier index.html :
-HTML
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -44,28 +37,10 @@ HTML
 </head>
 <body>
 
-    <div class="bandeau-meteo-container">
-        <a class="weatherwidget-io" 
-           href="https://forecast7.com/fr/46d232d21/france/" 
-           data-label_1="FRANCE" 
-           data-label_2="METEO" 
-           data-icons="Climacons Animated" 
-           data-theme="weather_one">
-           FRANCE WEATHER
-        </a>
-    </div>
-
-    <script>
-    !function(d,s,id){
-        var js,fjs=d.getElementsByTagName(s)[0];
-        if(!d.getElementById(id)){
-            js=d.createElement(s);
-            js.id=id;
-            js.src='https://weatherwidget.io/js/widget.min.js';
-            fjs.parentNode.insertBefore(js,fjs);
-        }
-    }(document,'script','weatherwidget-io-js');
-    </script>
+    <a class="weatherwidget-io" href="https://forecast7.com/fr/46d232d21/france/" data-label_1="FRANCE" data-label_2="WEATHER" data-icons="Climacons Animated" data-days="5" data-theme="weather_one" >FRANCE WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
 
 </body>
 </html>
