@@ -5,49 +5,60 @@ HTML
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bandeau Météo 4K iiSignage</title>
+    <title>Bandeau Météo Responsive iiSignage</title>
     <style>
-        /* Configuration de la page globale */
+        /* Supprime les marges de l'écran */
         html, body { 
             margin: 0; 
             padding: 0; 
-            width: 3840px; /* Force la largeur exacte de votre écran 4K */
+            width: 100%;
+            height: 100%;
             overflow: hidden; 
             background: transparent; 
         }
 
-        /* Conteneur du bandeau haut */
+        /* Le conteneur s'adapte automatiquement à la largeur imposée par iiSignage */
         .bandeau-meteo-container {
             position: absolute;
             top: 0;
             left: 0;
-            width: 3840px;
-            height: 90px; /* Hauteur idéale pour un bandeau en 4K (ajustable selon vos besoins) */
+            width: 100%;
+            height: 110px; /* Le bandeau fera 110px de haut, peu importe la largeur de la zone */
             z-index: 9999;
         }
 
-        /* Optimisation du widget WeatherWidget.io */
+        /* Le widget remplit le conteneur */
         .weatherwidget-io {
             display: block;
             width: 100% !important;
-            padding: 0;
-            margin: 0;
-            /* Optionnel : Augmente la taille globale des éléments si écrit trop petit sur la TV */
-            transform: scale(1.7); 
-            transform-origin: top left;
+            height: 100% !important;
         }
     </style>
 </head>
 <body>
 
     <div class="bandeau-meteo-container">
-        <a class="weatherwidget-io" href="https://forecast7.com/fr/46d232d21/france/" data-label_1="FRANCE" data-label_2="WEATHER" data-icons="Climacons Animated" data-days="5" data-theme="weather_one" >FRANCE WEATHER</a>
-
+        <a class="weatherwidget-io" 
+           href="https://forecast7.com/fr/46d232d21/france/" 
+           data-label_1="FRANCE" 
+           data-label_2="METEO" 
+           data-icons="Climacons Animated" 
+           data-theme="weather_one">
+           FRANCE WEATHER
+        </a>
     </div>
 
     <script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
+    !function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0];
+        if(!d.getElementById(id)){
+            js=d.createElement(s);
+            js.id=id;
+            js.src='https://weatherwidget.io/js/widget.min.js';
+            fjs.parentNode.insertBefore(js,fjs);
+        }
+    }(document,'script','weatherwidget-io-js');
+    </script>
 
 </body>
 </html>
