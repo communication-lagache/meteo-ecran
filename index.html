@@ -1,16 +1,66 @@
+HTML
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bandeau Météo Full HD iiSignage</title>
+    <style>
+        /* Configuration de la page globale pour le Full HD */
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            width: 1920px; /* Force la largeur exacte d'un écran Full HD */
+            height: 100%;
+            overflow: hidden; 
+            background: transparent; 
+        }
+
+        /* Conteneur du bandeau haut adapté au Full HD */
+        .bandeau-meteo-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1920px;
+            height: 110px; /* Hauteur standard parfaite pour le widget en Full HD */
+            z-index: 9999;
+        }
+
+        /* Optimisation du widget WeatherWidget.io */
+        .weatherwidget-io {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
-    <a class="weatherwidget-io" href="https://forecast7.com/fr/46d232d21/france/" data-label_1="FRANCE" data-label_2="WEATHER" data-icons="Climacons Animated" data-days="5" data-theme="weather_one" >FRANCE WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
+    <div class="bandeau-meteo-container">
+        <a class="weatherwidget-io" 
+           href="https://forecast7.com/fr/46d232d21/france/" 
+           data-label_1="FRANCE" 
+           data-label_2="METEO" 
+           data-icons="Climacons Animated" 
+           data-theme="weather_one">
+           FRANCE WEATHER
+        </a>
+    </div>
+
+    <script>
+    !function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0];
+        if(!d.getElementById(id)){
+            js=d.createElement(s);
+            js.id=id;
+            js.src='https://weatherwidget.io/js/widget.min.js';
+            fjs.parentNode.insertBefore(js,fjs);
+        }
+    }(document,'script','weatherwidget-io-js');
+    </script>
 
 </body>
 </html>
