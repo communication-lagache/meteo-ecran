@@ -33,35 +33,17 @@
             padding: 0;
             margin: 0;
             /* Optionnel : Augmente la taille globale des éléments si écrit trop petit sur la TV */
-            transform: scale(2); 
+            transform: scale(1); 
             transform-origin: top left;
         }
     </style>
 </head>
 <body>
 
-    <div class="bandeau-meteo-container">
-        <a class="weatherwidget-io" 
-           href="https://forecast7.com/fr/46d232d21/france/" 
-           data-label_1="FRANCE" 
-           data-label_2="METEO" 
-           data-icons="Climacons Animated" 
-           data-theme="weather_one">
-           FRANCE WEATHER
-        </a>
-    </div>
-
-    <script>
-    !function(d,s,id){
-        var js,fjs=d.getElementsByTagName(s)[0];
-        if(!d.getElementById(id)){
-            js=d.createElement(s);
-            js.id=id;
-            js.src='https://weatherwidget.io/js/widget.min.js';
-            fjs.parentNode.insertBefore(js,fjs);
-        }
-    }(document,'script','weatherwidget-io-js');
-    </script>
+   <a class="weatherwidget-io" href="https://forecast7.com/fr/46d232d21/france/" data-label_1="FRANCE" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="weather_one" >FRANCE WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
 
 </body>
 </html>
